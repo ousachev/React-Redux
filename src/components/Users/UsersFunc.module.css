@@ -1,0 +1,88 @@
+.pageList {
+  display: flex;
+  padding: 20px;
+}
+
+.pageList li {
+  margin-right: 5px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.pageList:last-child {
+  margin-right: 0;
+}
+
+.curPage {
+  font-weight: bold;
+}
+
+.usersList {
+  padding: 20px 10px;
+  width: 500px;
+}
+.userItem {
+  display: flex;
+  margin-bottom: 30px;
+  width: inherit;
+  justify-content: space-between;
+}
+
+.leftSide {
+  width: 20%;
+  text-align: center;
+  margin-right: 30px;
+}
+.userAvatar {
+  margin-bottom: 10px;
+}
+
+.userAvatar img {
+  border-radius: 50%;
+}
+.followButton,
+.unfollowButton {
+  padding: 5px 10px;
+  width: 100px;
+  border-radius: 20%;
+  border: 0;
+  background: greenyellow;
+}
+
+.rightSide {
+  display: flex;
+  justify-content: space-between;
+  background-color: khaki;
+  border: 1px solid grey;
+  border-radius: 20px;
+  width: 80%;
+  display: flex;
+  padding: 10px 20px;
+}
+
+.userDesc {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.userName {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.userStatus {
+  border: 1px solid greenyellow;
+  border-radius: 5px;
+  background-color: greenyellow;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.userLocation {
+  text-align: center;
+}
+
+.userCity {
+  margin-bottom: 20px;
+}

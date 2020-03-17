@@ -1,0 +1,25 @@
+.header {
+  grid-area: header;
+  background-color: #262626;
+  z-index: 100;
+  line-height: 54px;
+  padding: 10px 60px;
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 80px;
+  height: 50px;
+}
+
+.loginBlock a {
+  color: white;
+  font-size: 18px;
+  border: 1px solid white;
+  padding: 5px 10px;
+}
