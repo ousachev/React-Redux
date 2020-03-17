@@ -71,9 +71,9 @@ const UsersFunc = ({
               </NavLink>
               {!user.followed ? (
                 <button
-                  disabled={isFollowing}
+                  disabled={isFollowing.some(id => id === user.id)}
                   onClick={() => {
-                    toggleIsFollowing(true);
+                    toggleIsFollowing(true, user.id);
                     axios
                       .post(
                         `https://social-network.samuraijs.com/api/1.0/follow/${user.id}`,
@@ -89,7 +89,7 @@ const UsersFunc = ({
                         if (response.data.resultCode === 0) {
                           follow(user.id);
                         }
-                        toggleIsFollowing(false);
+                        toggleIsFollowing(false, user.id);
                       });
                   }}
                   className={followButton}
@@ -98,9 +98,9 @@ const UsersFunc = ({
                 </button>
               ) : (
                 <button
-                  disabled={isFollowing}
+                  disabled={isFollowing.some(id => id === user.id)}
                   onClick={() => {
-                    toggleIsFollowing(true);
+                    toggleIsFollowing(true, user.id);
                     axios
                       .delete(
                         `https://social-network.samuraijs.com/api/1.0/follow/${user.id}`,
@@ -115,7 +115,7 @@ const UsersFunc = ({
                         if (response.data.resultCode === 0) {
                           unfollow(user.id);
                         }
-                        toggleIsFollowing(false);
+                        toggleIsFollowing(false, user.id);
                       });
                   }}
                   className={unfollowButton}

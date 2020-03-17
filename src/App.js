@@ -7,7 +7,7 @@ import UsersContainer from "./components/Users/UsersContainer";
 import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
-import { Route, BrowserRouter } from "react-router-dom";
+import { Route, BrowserRouter, Redirect } from "react-router-dom";
 import HeaderContainer from "./components/Header/HeaderContainer";
 const App = () => {
   return (
@@ -17,6 +17,7 @@ const App = () => {
           <HeaderContainer />
           <Nav />
           <div className="wrapper-content">
+            <Redirect from="/" to="/profile" />
             <Route
               path="/profile/:userId?"
               render={() => <ProfileContainer />}

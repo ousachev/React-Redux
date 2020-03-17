@@ -10,7 +10,7 @@ const ProfileItem = ({ profile }) => {
   }
   return (
     <div className={profileBlock}>
-      <img src={profile.photos.large} alt="photo" />
+      <img src={profile.photos.large} alt="" />
       <div className={profileDesc}>
         <div>Статус:{profile.aboutMe}</div>
         <ul>

@@ -12,7 +12,7 @@ let initialState = {
   currentPage: 1,
   totalUsers: 0,
   isLoading: true,
-  isFollowing: false
+  isFollowing: []
 };
 
 const usersReducer = (state = initialState, action) => {
@@ -54,7 +54,12 @@ const usersReducer = (state = initialState, action) => {
       return { ...state, isLoading: action.isLoading };
     }
     case "TOGGLE_IS_FOLLOWING": {
-      return { ...state, isFollowing: action.isLoading };
+      return {
+        ...state,
+        isFollowing: action.isLoading
+          ? [...state.isFollowing, action.id]
+          : [state.isFollowing.filter(id => id !== action.id)]
+      };
     }
     default:
       return state;
@@ -78,9 +83,10 @@ export const setIsLoading = isLoading => ({
   type: SET_IS_LOADING,
   isLoading
 });
-export const toggleIsFollowing = isLoading => ({
+export const toggleIsFollowing = (isLoading, userID) => ({
   type: TOGGLE_IS_FOLLOWING,
-  isLoading
+  isLoading,
+  id: userID
 });
 
 window.initialState = initialState;
