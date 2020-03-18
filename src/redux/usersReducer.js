@@ -1,3 +1,5 @@
+import { userAPI } from "./../api/api";
+
 const FOLLOW = "FOLLOW";
 const UNFOLLOW = "UNFOLLOW";
 const SET_USERS = "SET_USERS";
@@ -89,5 +91,16 @@ export const toggleIsFollowing = (isLoading, userID) => ({
   id: userID
 });
 
-window.initialState = initialState;
+export const getUsers = (currentPage, pageSize) => {
+  return dispatch => {
+    dispatch(setCurrentPage(currentPage));
+    dispatch(setIsLoading(true));
+    userAPI.getUsers(currentPage, pageSize).then(response => {
+      dispatch(setUsers(response.items));
+      dispatch(setTotalUsers(response.totalCount / 4));
+      dispatch(setIsLoading(false));
+    });
+  };
+};
+
 export default usersReducer;
