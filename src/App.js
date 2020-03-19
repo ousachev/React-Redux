@@ -11,7 +11,7 @@ import { Route, BrowserRouter, Redirect } from "react-router-dom";
 import HeaderContainer from "./components/Header/HeaderContainer";
 const App = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <div className="wrapper">
         <div className="container">
           <HeaderContainer />
