@@ -1,16 +1,20 @@
 import React from "react";
 import classes from "./ProfileItem.module.css";
 import Preloader from "../../Preloader/Preloader";
-
+import avatar from "../../../assets/images/1.png";
 const ProfileItem = ({ profile }) => {
-  let { profileDesc, profileBlock } = classes;
+  let { profileDesc, profileBlock, profileAvatar } = classes;
 
   if (!profile) {
     return <Preloader />;
   }
   return (
     <div className={profileBlock}>
-      <img src={profile.photos.large} alt="" />
+      <img
+        className={profileAvatar}
+        src={!profile.photos.large ? avatar : profile.photos.large}
+        alt=""
+      />
       <div className={profileDesc}>
         <div>Статус:{profile.aboutMe}</div>
         <ul>

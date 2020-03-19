@@ -5,3 +5,8 @@
 .profileDesc {
   padding: 10px;
 }
+
+.profileAvatar {
+  max-width: 180px;
+  max-height: 180px;
+}
