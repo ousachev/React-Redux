@@ -29,7 +29,6 @@ export class UsersContainer extends Component {
       follow,
       unfollow,
       isLoading,
-      toggleIsFollowing,
       isFollowing
     } = this.props;
     return (
@@ -45,7 +44,6 @@ export class UsersContainer extends Component {
             currentPage={currentPage}
             follow={follow}
             unfollow={unfollow}
-            toggleIsFollowing={toggleIsFollowing}
             isFollowing={isFollowing}
           />
         )}
