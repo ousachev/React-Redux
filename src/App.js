@@ -1,23 +1,25 @@
 import React from "react";
+import { BrowserRouter, Redirect, Route } from "react-router-dom";
 import "./App.css";
-import Nav from "./components/Navigation/Navigation";
-import ProfileContainer from "./components/Profile/ProfileContainer";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
-import UsersContainer from "./components/Users/UsersContainer";
-import News from "./components/News/News";
-import Music from "./components/Music/Music";
-import Settings from "./components/Settings/Settings";
-import { Route, BrowserRouter, Redirect } from "react-router-dom";
 import HeaderContainer from "./components/Header/HeaderContainer";
+import Music from "./components/Music/Music";
+import Nav from "./components/Navigation/Navigation";
+import News from "./components/News/News";
+import ProfileContainer from "./components/Profile/ProfileContainer";
+import Settings from "./components/Settings/Settings";
+import UsersContainer from "./components/Users/UsersContainer";
+import Login from "./components/Login/Login";
 const App = () => {
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <BrowserRouter>
       <div className="wrapper">
         <div className="container">
           <HeaderContainer />
           <Nav />
           <div className="wrapper-content">
-            <Redirect from="/" to="/profile" />
+            <Redirect exact from="/" to="/profile" />
+            <Route path="/login" render={() => <Login />} />
             <Route
               path="/profile/:userId?"
               render={() => <ProfileContainer />}

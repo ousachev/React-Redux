@@ -8,8 +8,9 @@ const mapStateToProps = state => {
   };
 };
 
-const MyPostContainer = connect(mapStateToProps, { updatePostText, addPost })(
-  MyPosts
-);
+const MyPostContainer = connect(mapStateToProps, {
+  updatePostText,
+  addPost
+})(MyPosts);
 
 export default MyPostContainer;

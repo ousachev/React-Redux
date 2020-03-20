@@ -3,10 +3,15 @@ import MyPostsContainer from "./MyPosts/MyPostsContainer";
 import ProfileItem from "./ProfileItem/ProfileItem";
 // import classes from "./Profile.module.css";
 
-const Profile = props => {
+const Profile = ({ profile, status, updateStatus }) => {
   return (
     <div>
-      <ProfileItem profile={props.profile} />
+      <ProfileItem
+        profile={profile}
+        status={status}
+        updateStatus={updateStatus}
+      />
+
       <MyPostsContainer />
     </div>
   );

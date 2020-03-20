@@ -1,13 +1,14 @@
 import React from "react";
 import classes from "./ProfileItem.module.css";
-import Preloader from "../../Preloader/Preloader";
 import avatar from "../../../assets/images/1.png";
-const ProfileItem = ({ profile }) => {
+import ProfileStatus from "./ProfileStatus";
+import Preloader from "./../../Preloader/Preloader";
+
+const ProfileItem = ({ profile, status, updateStatus }) => {
   let { profileDesc, profileBlock, profileAvatar } = classes;
 
-  if (!profile) {
-    return <Preloader />;
-  }
+  if (!profile) return <Preloader />;
+
   return (
     <div className={profileBlock}>
       <img
@@ -16,7 +17,7 @@ const ProfileItem = ({ profile }) => {
         alt=""
       />
       <div className={profileDesc}>
-        <div>Статус:{profile.aboutMe}</div>
+        <ProfileStatus status={status} updateStatus={updateStatus} />
         <ul>
           {Object.entries(profile.contacts).map(item => {
             return <li key={item[0]}>{item[1]}</li>;

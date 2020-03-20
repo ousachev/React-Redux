@@ -6,7 +6,8 @@ import Message from "./Message/Message";
 const Dialogs = ({
   dialogsPage: { dialogData, messagesData, newMessageText },
   sendNewMessage,
-  updateNewMessageText
+  updateNewMessageText,
+  isAuth
 }) => {
   let dialogArrays = dialogData.map(dialog => {
     return <Dialog name={dialog.name} id={dialog.id} key={dialog.id} />;
@@ -24,6 +25,7 @@ const Dialogs = ({
     let newMessage = e.target.value;
     updateNewMessageText(newMessage);
   };
+
   return (
     <div className={dialogs}>
       <ul className={users}>{dialogArrays}</ul>

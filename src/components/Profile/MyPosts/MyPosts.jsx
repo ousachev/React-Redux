@@ -5,7 +5,7 @@ import Post from "./Post/Post";
 const MyPosts = ({
   profilePage: { postData, newPostText },
   addPost,
-  updateNewPostChange
+  updatePostText
 }) => {
   let { postSection, addPostButton, title } = classes;
   let postsArray = postData.map(post => {
@@ -27,7 +27,7 @@ const MyPosts = ({
 
   let onPostChange = () => {
     let text = newPost.current.value;
-    updateNewPostChange(text);
+    updatePostText(text);
   };
 
   return (
