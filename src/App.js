@@ -14,8 +14,8 @@ const App = () => {
   return (
     <BrowserRouter>
       <div className="wrapper">
+        <HeaderContainer />
         <div className="container">
-          <HeaderContainer />
           <Nav />
           <div className="wrapper-content">
             <Redirect exact from="/" to="/profile" />

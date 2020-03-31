@@ -25,10 +25,7 @@ button:focus {
 
 .container {
   display: grid;
-  grid-template-areas:
-    "header header header"
-    "nav content content";
-  grid-template-rows: 60px 1fr;
+  grid-template-areas: "nav content content";
   grid-template-columns: 2fr 10fr;
   width: 1200px;
   margin: 0 auto;

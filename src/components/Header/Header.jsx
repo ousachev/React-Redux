@@ -1,8 +1,8 @@
 import React from "react";
 import classes from "./Header.module.css";
 import { NavLink } from "react-router-dom";
-const Header = ({ isAuth }) => {
-  let { header, logo, loginBlock, headerContainer } = classes;
+const Header = ({ isAuth, login, logout }) => {
+  let { header, logo, loginBlock, headerContainer, loginOn } = classes;
   return (
     <header className={header}>
       <div className={headerContainer}>
@@ -14,7 +14,12 @@ const Header = ({ isAuth }) => {
 
         <div className={loginBlock}>
           {isAuth ? (
-            <NavLink to="/login">Logout</NavLink>
+            <div className={loginOn}>
+              {login}-
+              <a href="/login" onClick={logout}>
+                Logout
+              </a>
+            </div>
           ) : (
             <NavLink to="/login">Login</NavLink>
           )}
