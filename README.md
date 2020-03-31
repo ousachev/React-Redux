@@ -12,6 +12,6 @@ Yarn запустит проект на 3000 порту!
 
 ### `Для корректной работы с серверным API необходимо подключение к интернету`  
 
-Данные для авторизации:
-Login:usachev.olegg@gmail.com
-password:qawsed123
+Данные для авторизации:  
+Login:usachev.olegg@gmail.com  
+Password:qawsed123  
