@@ -2,9 +2,8 @@ import React from "react";
 import classes from "./Post.module.css";
 
 const Post = ({ message, likeCounter }) => {
-  let { item, avatar } = classes;
+  const { item, avatar } = classes;
   return (
-    <div>
       <div className={item}>
         <img
           className={avatar}
@@ -13,7 +12,6 @@ const Post = ({ message, likeCounter }) => {
         />
         {message} {likeCounter}
       </div>
-    </div>
   );
 };
 

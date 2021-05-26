@@ -5,8 +5,8 @@ import { Field, reduxForm } from "redux-form";
 import { Textarea } from "../../../assets/formControls/FormControls";
 
 const MyPosts = ({ profilePage: { postData }, addPost }) => {
-  let { postSection, title } = classes;
-  let postsArray = postData.map(post => {
+  const { postSection, title } = classes;
+  const postsArray = postData.map(post => {
     return (
       <Post
         message={post.message}
@@ -17,7 +17,7 @@ const MyPosts = ({ profilePage: { postData }, addPost }) => {
     );
   });
 
-  let addNewPost = values => {
+  const addNewPost = values => {
     addPost(values.newPostText);
   };
 

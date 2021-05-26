@@ -2,7 +2,7 @@ import { authAPI } from "../api/api";
 
 const SET_USER_DATA = "SET_USER_DATA";
 
-let initialState = {
+const initialState = {
   isAuth: false,
   login: null,
   email: null,

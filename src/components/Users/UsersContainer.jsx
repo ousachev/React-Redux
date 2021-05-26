@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState} from "react";
 import { connect } from "react-redux";
 import {
   follow,
@@ -9,35 +9,31 @@ import {
 import Preloader from "../Preloader/Preloader";
 import UsersFunc from "./UsersFunc";
 
-export class UsersContainer extends Component {
-  componentDidMount() {
-    const { getUsers, currentPage, pageSize } = this.props;
-    getUsers(currentPage, pageSize);
-  }
+const UsersContainer =(props)=> {
+  const { getUsers, totalUsers,
+    users,
+    pageSize,
+    currentPage,
+    follow,
+    unfollow,
+    isLoading,
+    isFollowing } = props;
 
-  onPageChanged = pageNum => {
-    const { getUsers, pageSize } = this.props;
+  useState(()=>{
+      getUsers(currentPage, pageSize);
+    },[])
+
+ const onPageChanged = pageNum => {
     getUsers(pageNum, pageSize);
   };
 
-  render() {
-    const {
-      totalUsers,
-      users,
-      pageSize,
-      currentPage,
-      follow,
-      unfollow,
-      isLoading,
-      isFollowing
-    } = this.props;
     return (
       <>
         {isLoading ? (
           <Preloader />
         ) : (
           <UsersFunc
-            onPageChanged={this.onPageChanged}
+            onPageChanged={onPageChanged}
             users={users}
             totalUsers={totalUsers}
             pageSize={pageSize}
@@ -49,7 +45,7 @@ export class UsersContainer extends Component {
         )}
       </>
     );
-  }
+
 }
 
 const mapStateToProps = state => {

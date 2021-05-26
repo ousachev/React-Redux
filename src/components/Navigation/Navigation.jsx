@@ -2,50 +2,33 @@ import React from "react";
 import classes from "./Navigation.module.css";
 import { NavLink } from "react-router-dom";
 
+const links = [
+  {title:'Profile',route:'/profile'},
+  {title:'Messages',route:'/dialogs'},
+  {title:'Users',route:'/users'},
+  {title:'News',route:'/news'},
+  {title:'Music',route:'/music'},
+  {title:'Settings',route:'/settings'},
+]
+
 const Nav = () => {
-  let { nav, nav__list, nav__item, nav__link, active } = classes;
+  const { nav, nav__list, nav__item, nav__link, active } = classes;
   return (
     <nav className={nav}>
       <ul className={nav__list}>
-        <li className={nav__item}>
-          <NavLink
-            className={nav__link}
-            activeClassName={active}
-            to="/profile"
-            exact
-          >
-            Profile
-          </NavLink>
-        </li>
-        <li className={nav__item}>
-          <NavLink className={nav__link} activeClassName={active} to="/dialogs">
-            Messages
-          </NavLink>
-        </li>
-        <li className={nav__item}>
-          <NavLink className={nav__link} activeClassName={active} to="/users">
-            Users
-          </NavLink>
-        </li>
-        <li className={nav__item}>
-          <NavLink className={nav__link} activeClassName={active} to="/news">
-            News
-          </NavLink>
-        </li>
-        <li className={nav__item}>
-          <NavLink className={nav__link} activeClassName={active} to="/music">
-            Music
-          </NavLink>
-        </li>
-        <li className={nav__item}>
-          <NavLink
-            className={nav__link}
-            activeClassName={active}
-            to="/settings"
-          >
-            Settings
-          </NavLink>
-        </li>
+        {links.map(link=>{
+          return  <li className={nav__item}>
+            <NavLink
+                className={nav__link}
+                activeClassName={active}
+                to={link.route}
+                exact
+            >
+              {link.title}
+            </NavLink>
+          </li>
+        })}
+
       </ul>
     </nav>
   );

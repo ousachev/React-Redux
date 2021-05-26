@@ -5,7 +5,7 @@ import ProfileStatus from "./ProfileStatus";
 import Preloader from "./../../Preloader/Preloader";
 
 const ProfileItem = ({ profile, status, updateStatus }) => {
-  let { profileDesc, profileBlock, profileAvatar } = classes;
+  const{ profileDesc, profileBlock, profileAvatar } = classes;
 
   if (!profile) return <Preloader />;
 

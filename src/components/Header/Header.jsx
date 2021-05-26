@@ -2,7 +2,7 @@ import React from "react";
 import classes from "./Header.module.css";
 import { NavLink } from "react-router-dom";
 const Header = ({ isAuth, login, logout }) => {
-  let { header, logo, loginBlock, headerContainer, loginOn } = classes;
+  const { header, logo, loginBlock, headerContainer, loginOn } = classes;
   return (
     <header className={header}>
       <div className={headerContainer}>

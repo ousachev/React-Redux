@@ -1,6 +1,6 @@
 const SEND_NEW_MESSAGE = "SEND_NEW_MESSAGE";
 
-let initialState = {
+const initialState = {
   dialogData: [
     { name: "Evgeny", id: "1" },
     { name: "Oleg", id: "2" },

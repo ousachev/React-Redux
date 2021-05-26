@@ -1,4 +1,4 @@
-import { userAPI } from "./../api/api";
+import { userAPI } from "../api/api";
 
 const FOLLOW = "FOLLOW";
 const UNFOLLOW = "UNFOLLOW";
@@ -8,7 +8,7 @@ const SET_TOTAL_USERS = "SET_TOTAL_USERS";
 const SET_IS_LOADING = "SET_IS_LOADING";
 const TOGGLE_IS_FOLLOWING = "TOGGLE_IS_FOLLOWING";
 
-let initialState = {
+const initialState = {
   users: [],
   pageSize: 30,
   currentPage: 1,

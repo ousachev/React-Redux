@@ -4,7 +4,7 @@ const ADD_POST = "ADD_POST";
 const SET_USER_PROFILE = "SET_USER_PROFILE";
 const SET_STATUS = "SET_STATUS";
 
-let initialState = {
+const initialState = {
   postData: [
     { id: 1, message: "Hello my Friend", likesCount: 3 },
     { id: 2, message: "Reaaaaaaact", likesCount: 24 }
